@@ -6,7 +6,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Color Palette App",
-  description: "Simple image color palette parser",
+  description: "Generate color palette based on uploaded image",
 };
 
 export default function RootLayout({
