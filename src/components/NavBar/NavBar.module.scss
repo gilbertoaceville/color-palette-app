@@ -1,0 +1,46 @@
+.nav {
+  padding: 1rem 4rem;
+  width: 100%;
+  min-height: 10vh;
+  background: #262626;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  &__title {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    background: linear-gradient(110.42deg, #821bcb 29.2%, #008080 63.56%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & label {
+      padding: 0.5rem 2rem;
+      border-radius: 0.5rem;
+      border: 2px solid var(--border);
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      & i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

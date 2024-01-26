@@ -1,5 +1,9 @@
+import HeroImage from "@/components/HeroImage/HeroImage";
+
 export default function Home() {
   return (
-    <main>Home</main>
+    <main className="main">
+      <HeroImage />
+    </main>
   );
 }
