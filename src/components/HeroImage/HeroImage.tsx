@@ -3,7 +3,7 @@ import styles from "./HeroImage.module.scss";
 
 interface HeroImageProps {
   image: StaticImageData | string;
-  palette: string[];
+  palette: unknown[];
 }
 
 export default function HeroImage({ image, palette }: HeroImageProps) {
