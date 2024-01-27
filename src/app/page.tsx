@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from "react";
 import ColorThief from "colorthief";
 
 import NavBar from "@/components/NavBar/NavBar";
-import HeroImage from "@/components/HeroImage/HeroImage";
+import ImageCard from "@/components/ImageCard/ImageCard";
 
 export default function Home() {
   const [file, setFile] = useState("");
@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <NavBar uploadFile={uploadFile} />
       <main className="main">
-        <HeroImage palette={colorPalette} image={file} />
+        <ImageCard palette={colorPalette} image={file} />
       </main>
     </>
   );
