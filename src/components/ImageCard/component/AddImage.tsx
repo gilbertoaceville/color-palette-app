@@ -34,7 +34,7 @@ export default function AddImage({ handleFileChange }: AddImageProps) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { "image/*": [".png", ".webp", ".jpeg"] },
+    accept: { "image/*": [".png", ".webp", ".jpeg", ".avif"] },
   });
   return (
     <div {...getRootProps()} className={styles.dropzone}>

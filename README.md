@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Color Palette ✍️
 
-## Getting Started
+A way to generate colors from images including but not limited to (jpg, jpeg, png, webp)
 
-First, run the development server:
+## Installation 🛠️
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+After cloning the project, you need to run `npm install`, then `npm run dev` 🔧
+
+## Process 💪
+
+Extended the default Next.js Configuration to include custom Sass options allowing the usage of Sass files located in specified paths.
+
+```jsx
+const nextConfig = {};
+
+module.exports = (phase, { defaultConfig }) => {
+  if ("sassOptions" in defaultConfig)
+    defaultConfig["sassOptions"] = {
+      includePaths: [path.join(__dirname, "src/styles")],
+    };
+  const config = {
+    ...defaultConfig,
+    ...nextConfig,
+  };
+
+  return config;
+};
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Adding images to generate color palettes returns values which was converted to hex using the utility function
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+export function convertRgbToHex(rgb: string) {
+  let hex = Number(rgb).toString(16);
+  if (hex.length < 2) {
+    hex = "0" + hex;
+  }
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  return hex;
+}
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Notes 🗒️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Drag and drop was implemented
+- Application in some parts is still a work in progress
+- Project was not written with responsiveness in mind (esp. on mobile devices)
+- Colors generated can be copied on the palette
+- My main inspiration for this project was Github Project 😁
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tools ⚒️
 
-## Deploy on Vercel
+- Building: React, TypeScript, SCSS, React Dropzone, Color Thief
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Next Steps 🖌️
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Implementing a reponsive UI
+- Focus on accessibility
+
+## Demo 🎥
+
+https://ik.imagekit.io/xitvuuh9spa/Color_palette_screen_recording_1Wdj67po8.mp4
+
+
