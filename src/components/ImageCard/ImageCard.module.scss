@@ -1,19 +1,27 @@
-.wrapper {
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.wrapper {
+  @extend .flex;
   flex-direction: column;
   gap: 2rem;
 
+  &__content {
+    @extend .flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
   &__image {
+    @extend .flex;
+
     width: 48rem;
     height: 25rem;
 
     position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     border: 2px solid var(--border);
     border-radius: 0.5rem;
@@ -33,21 +41,26 @@
       object-position: center;
       border-radius: 0.5rem;
     }
+
+    &-title {
+      @extend .flex;
+
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .flex;
+
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   // base-palette
   &__palette {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .flex;
+
     flex-wrap: wrap;
     gap: 1rem;
 
@@ -70,17 +83,17 @@
         cursor: pointer;
         padding: 0.5rem 1rem;
         width: 100%;
-  
+
         position: absolute;
         bottom: 0;
         border-top: 2px solid #ffffff2f;
         border-bottom-right-radius: 0.4rem;
         border-bottom-left-radius: 0.4rem;
-  
+
         display: flex;
         align-items: center;
         justify-content: space-between;
-  
+
         font-weight: 600;
         color: #02203c;
         background-color: rgba(255, 255, 255, 0.14);
@@ -90,5 +103,36 @@
         }
       }
     }
+  }
+}
+
+.dropzone {
+  height: 100%;
+  width: 100%;
+  @extend .flex;
+  cursor: pointer;
+
+  &__plus,
+  &__minus {
+    @extend .flex;
+
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    color: rgb(178, 190, 205);
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.55s ease-in-out;
+    background: rgb(114, 99, 243);
+  }
+
+  &__minus {
+    background: rgb(141, 4, 4);
+    color: rgb(255, 255, 255);
   }
 }

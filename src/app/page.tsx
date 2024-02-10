@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <NavBar uploadFile={uploadFile} />
       <main className="main">
-        <ImageCard palette={colorPalette} image={file} />
+        <ImageCard palette={colorPalette} image={file as string} setFile={setFile} setColorPalette={setColorPalette} />
       </main>
     </>
   );
